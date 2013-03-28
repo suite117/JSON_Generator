@@ -1,26 +1,22 @@
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import com.google.gson.Gson;
 
-public class UserGSON {
+public class PersonaGSON {
+
 	public static void main(String[] args) {
 
-		FileUtils file = new FileUtils("nomi.txt");
-		file.openRead();
+		PersonaDAO userDAO = new PersonaDAO(Persona.class);
+		// User u = new User();
+		List<Persona> users = null;
+		try {
 
-		List<Persona> users = new ArrayList<Persona>();
-		String line;
-		int i = 0;
-		while ((line = file.readLine()) != null) {
-			Persona user = new Persona();
-			user.setId(i);
-			i++;
-			//user.setName(line);
-			//user.setSurname(line);
-			users.add(user);
+			users = userDAO.findAll();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
 		Gson gson = new Gson();

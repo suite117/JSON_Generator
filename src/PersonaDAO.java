@@ -1,13 +1,10 @@
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-public class UserDAO extends DAO<Persona, Integer> {
+public class PersonaDAO extends DAO<Persona, Integer> {
 
-	public UserDAO(Class<Persona> objectClass) {
+	public PersonaDAO(Class<Persona> objectClass) {
 		super(objectClass);
 	}
 
@@ -46,7 +43,7 @@ public class UserDAO extends DAO<Persona, Integer> {
 
 	public static void main(String[] args) {
 
-		UserDAO userDAO = new UserDAO(Persona.class);
+		PersonaDAO userDAO = new PersonaDAO(Persona.class);
 		// User u = new User();
 
 		try {
