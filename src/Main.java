@@ -24,8 +24,7 @@ public class Main {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
+
 		Gson gson = new Gson();
 		String usersJson = gson.toJson(users);
 		System.out.println(usersJson);
